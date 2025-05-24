@@ -1,8 +1,26 @@
+<?php
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+
+  if ($email == "hem@test.com" && $password == "admin") {
+    $error = "Login success.!!!";
+  } else {
+    $error = "Login Failed.!";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login Form</title>
   <style>
     body {
@@ -89,19 +107,24 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="login-container">
+   <?php 
+   echo $error;
+   ?>
+
     <h2>Login</h2>
-    <form>
+    <form method="POST">
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="you@example.com" required />
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required />
+        <input type="password" id="password" name="password" placeholder="Enter password" required />
         <div class="show-password">
           <input type="checkbox" id="togglePassword" />
           <label for="togglePassword" style="margin-left: 6px;">Show Password</label>
@@ -121,10 +144,11 @@
     const toggle = document.getElementById("togglePassword");
     const password = document.getElementById("password");
 
-    toggle.addEventListener("change", function () {
+    toggle.addEventListener("change", function() {
       password.type = this.checked ? "text" : "password";
     });
   </script>
 
 </body>
+
 </html>
