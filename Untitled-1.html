@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teacher Feedback & Daily Schedule</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    form, table {
+      margin-bottom: 40px;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #888;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📝 Teacher Feedback Form</h2>
+  <form action="/submit-feedback" method="post">
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" required>
+
+    <label for="teacherName">Teacher Name:</label>
+    <input type="text" id="teacherName" name="teacherName" required>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating">
+      <option value="5">⭐️⭐️⭐️⭐️⭐️ Excellent</option>
+      <option value="4">⭐️⭐️⭐️⭐️ Good</option>
+      <option value="3">⭐️⭐️⭐️ Average</option>
+      <option value="2">⭐️⭐️ Poor</option>
+      <option value="1">⭐️ Very Poor</option>
+    </select>
+
+    <input type="submit" value="Submit Feedback">
+  </form>
+
+  <h2>📚 Daily Topic Schedule</h2>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Subject</th>
+      <th>Topic</th>
+      <th>Teacher</th>
+    </tr>
+    <tr>
+      <td>2025-05-24</td>
+      <td>Computer Science</td>
+      <td>HTML Basics</td>
+      <td>Mr. Hemant</td>
+    </tr>
+    <tr>
+      <td>2025-05-25</td>
+      <td>Mathematics</td>
+      <td>Trigonometry</td>
+      <td>Ms. Sita</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+</body>
+</html>
